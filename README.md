@@ -8,6 +8,6 @@ python3.9 -m pip install --upgrade pip
   pip3.9 install pyecharts
 # 5.启动
   python3.9 manage.py runserver 0.0.0.0:8000
-  
+  或者
   <img width="1450" alt="image" src="https://github.com/lihuigang/hackathon/assets/35155212/d6230bc3-dad4-435d-b87b-06ff2562c93e">
 
