@@ -1,7 +1,7 @@
 
 import openai
 openai.api_key = "申请的AppId"
-openai.api_base = "https://aigc.sankuai.com/v1/openai/native"
+openai.api_base = ""
 
 result = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
