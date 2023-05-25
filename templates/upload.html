@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>上传需要分析的csv文件</title>
+    <script src="https://cdn.bootcss.com/echarts/3.7.1/echarts.min.js"></script>
+</head>
+<body>
+    <h1>请上传需要分析的csv文件</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="csv_file">
+        <button type="submit">Upload</button>
+    </form>
+    {% if filename %}
+        <p>文件上传成功: {{ filename }}</p>
+    {% endif %}
+
+    <div id="chart" style="width: 600px;height:400px;"></div>
+    <script>
+        // 将图表数据解析为 JSON 格式
+        var chartData = {{ chart_data|safe }};
+
+        // 初始化图表
+        var chart = echarts.init(document.getElementById('chart'));
+
+        // 设置图表数据
+        chart.setOption(chartData);
+    </script>
+</body>
+</html>
